@@ -1,39 +1,39 @@
 import React, { useState } from "react";
-import { Container, Menu, Icon} from "semantic-ui-react";
+import { Container, Menu} from "semantic-ui-react";
+import { NavLink,useHistory } from 'react-router-dom'
 
 import SignIn from "./SignIn/SignIn";
 import SignOut from "./SignOut/SignOut";
 
 export default function Navi() {
     const [isAuthenticated, setIsAuthenticated] = useState(true)
+    const history=useHistory();
 
     function handleSignOut() {
         setIsAuthenticated(false)
+        history.push("/")
     }
 
     function handleSignIn() {
         setIsAuthenticated(true)
     }
     return (
-        <div>
-            <Menu size="large" inverted fixed="top">
+      <div>
+      <Menu inverted>
           <Container>
-            <Menu.Item name="HRMS PROJECT">
-              <Icon name="globe"/>
-              HRMS PROJECT
-            </Menu.Item>
-            <Menu.Item name="Ana Sayfa">
-              <Icon name="home" />
-              Ana Sayfa
-            </Menu.Item>
-            <Menu.Item name="İş ilanları"/>
-            <Menu.Item name="Cv-ler" />
+              <Menu.Item as={NavLink} to='/' name='Job Ads'/>
+              <Menu.Item as={NavLink} to='/jobseeker' name='JobSeeker'/>
+              <Menu.Item as={NavLink} to='/employers' name='Employers'/>
+              <Menu.Item as={NavLink} to='/curriculumvitae' name='CurriculumVitae'/>
 
-            <Menu.Menu position="right">
-                {isAuthenticated?<SignIn signOut={handleSignOut} />:<SignOut signIn={handleSignIn} />}
-            </Menu.Menu>
+              <Menu.Menu position='right'>
+                  <Menu.Item>
+                     {/* <Input icon='search' placeholder='Search...' />*/}
+                  </Menu.Item>
+                  { isAuthenticated ? <SignIn  signOut={handleSignOut}/> : <SignOut signIn={handleSignIn}/> }
+              </Menu.Menu>
           </Container>
-        </Menu>
-        </div>
+      </Menu>
+  </div>
     )
 }

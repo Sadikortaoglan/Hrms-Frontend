@@ -2,8 +2,9 @@ import axios from "axios";
 
 
 export default class JobSeekerService{
-
-    getAll(){
-        return axios.get("http://localhost:8080/api/jobseekers/getall")
+    controllerUrl=`${process.env.REACT_APP_API_URL}/jobseekers`
+    getAll(){ 
+       return axios.get(`${this.controllerUrl}/getall`)
+       
     }
 }

@@ -11,24 +11,26 @@ export default function EmloyerList() {
       jobSeekerService.getAll().then((result) => setEmployers(result.data.data));
     });
     return (
-        <div>
+      
+        <div> 
              <Table fixed>
                     <Table.Header>
                         <Table.Row>
                             <Table.HeaderCell>Id</Table.HeaderCell>
-                            <Table.HeaderCell>First Name</Table.HeaderCell>
-                            <Table.HeaderCell>Last Name</Table.HeaderCell>
-                            <Table.HeaderCell>Identity Number</Table.HeaderCell>
+                            <Table.HeaderCell>Company Name</Table.HeaderCell>
+                            <Table.HeaderCell>Web Site</Table.HeaderCell>
+                            <Table.HeaderCell>Status</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
                     <Table.Body>
                         {
                             employers.map((employer) => (
-                                <Table.Row>
-                                    <Table.Cell>{employer.İD}</Table.Cell>
+                                <Table.Row key={employer.id}>
+                                    
+                                    <Table.Cell>{employer.id}</Table.Cell>
                                     <Table.Cell>{employer.companyName}</Table.Cell>
-                                    <Table.Cell>{employer.status}</Table.Cell>
                                     <Table.Cell>{employer.webSite}</Table.Cell>
+                                    <Table.Cell>{employer.status}</Table.Cell>
                                 </Table.Row>
                             ))
                         }
