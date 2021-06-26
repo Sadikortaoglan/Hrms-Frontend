@@ -6,6 +6,9 @@ import Filters from "../Filters/filters";
 import JobPosting from "../../components/JobPosting/JobPosting";
 import EmployersList from "../../components/Employer/EmployerList"
 import CurriculumVitaeList from "../../components/CurriculumVitae/CurriculumVitaeList";
+import EmployerLogin from "../../components/Employer/EmployerLogin";
+import JobSeekerRegisterPage from "../../components/JobSeekers/JobSeekerAdd";
+import EmployerRegisterPage from "../../components/Employer/EmployerRegister";
 
 export default function Dashboard() {
   return (
@@ -20,6 +23,9 @@ export default function Dashboard() {
             <Route exact path="/jobseeker" component={JobSeekerList}></Route>
             <Route exact path="/employers" component={EmployersList}></Route>
             <Route exact path="/curriculumvitae" component={CurriculumVitaeList}></Route>
+            <Route exact path="/jobSeekerAdd" component={EmployerLogin}></Route>
+            <Route exact path="/jobseekerregister" component={JobSeekerRegisterPage}></Route>
+            <Route exact path="/employerregister" component={EmployerRegisterPage}></Route>
           </Grid.Column>
         </Grid.Row>
       </Grid>

@@ -25,6 +25,7 @@ export default function Navi() {
               <Menu.Item as={NavLink} to='/jobseeker' name='JobSeeker'/>
               <Menu.Item as={NavLink} to='/employers' name='Employers'/>
               <Menu.Item as={NavLink} to='/curriculumvitae' name='CurriculumVitae'/>
+              <Menu.Item as={NavLink} to='/jobseekeradd' name='EmployerLogin'/>
 
               <Menu.Menu position='right'>
                   <Menu.Item>
