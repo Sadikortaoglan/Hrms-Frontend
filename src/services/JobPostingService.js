@@ -7,8 +7,8 @@ export default class JobPostingService{
         return axios.get(`${this.controllerUrl}/getall`)
     }
     
-    add(){
-        return axios.get(`${this.controllerUrl}/add`)
+    add(jobPosting){
+        return axios.get(`${this.controllerUrl}/jobPosting`,jobPosting)
     }
 
     findByActiveTrue(){
