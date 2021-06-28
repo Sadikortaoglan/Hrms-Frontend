@@ -7,4 +7,7 @@ export default class SocialMediaService{
     getAll(){
         return axios.get(`${this.controllerUrl}/getall`)
     }
+    SocialMediaWithJobSeeker(social){
+        return axios.get(`${this.controllerUrl}/SocialMediaWithJobSeeker`,social)
+    }
 }

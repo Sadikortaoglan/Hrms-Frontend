@@ -6,4 +6,9 @@ export default class LanguageService{
     getAll(){
         return axios.get(`${this.controllerUrl}/getall`)
     }
+    
+    languageWithJobSeekerAdd(language){
+        return axios.post(`${this.controllerUrl}/languageWithJobSeekerAdd`,language)
+    }
+    l
 }

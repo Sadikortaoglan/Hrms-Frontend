@@ -13,29 +13,31 @@ export default function CurriculumVitaeList() {
   const [socials, setsocial] = useState([]);
   const [workExperiences, setworkExperiences] = useState([]);
   const [curriculumVitaes, setcurriculumVitaes] = useState([]);
-  const [jobSeekers, setjobSeekers] = useState([]);
-  const [schools, setschools] = useState([])
+  const [jobSeekers, setjobSeekers] = useState(null);
+  const [schools, setschools] = useState(null)
 
  
   useEffect(() => {
     let curriculumVitaeService = new CurriculumVitaeService();
-    curriculumVitaeService.findByJobSeekerId(id).then((result) => {
+    curriculumVitaeService.findByJobSeekerId(1).then((result) => {
       setcurriculumVitaes(result.data.data)
-      setlanguages(result.data.languages)
-      setauth(result.data.data.auths)
-      setcities(result.data.data.cities)
-      setcapabilities(result.data.data.capabilities)
-      setsocial(result.data.data.socials)
-      setworkExperiences(result.data.data.workExperiences)
-      setjobSeekers(result.data.data.jobSeekers)
-      setschools(result.data.data.school);
-      console.log(result)
+      // setlanguages(result.data.languages)
+      // setauth(result.data.auths)
+      // setcities(result.data.cities)
+      // setcapabilities(result.data.capabilities)
+      // setsocial(result.data.socials)
+      // setworkExperiences(result.data.workExperiences)
+      // setjobSeekers(result.data.jobSeekers)
+      //setschools(result.data.school);
+      console.log("dsdfsdfsdf")
     });
   },[id]);
 
   return (
     <div>
-      <Card.Group>
+
+   
+     <Card.Group>
     <Card fluid>
       <Card.Content>
         <Image
@@ -57,7 +59,7 @@ export default function CurriculumVitaeList() {
         </div>
       </Card.Content>
     </Card>   
-  </Card.Group>
+  </Card.Group> 
     </div>
   );
 }

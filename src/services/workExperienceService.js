@@ -10,5 +10,7 @@ export default class WorkExperienceService{
     workExperienceForJobSeekerAdd(){
         return axios.get(`${this.controllerUrl}/workExperienceForJobSeekerAdd`)
     }
-
+    deleteById(id){
+        return axios.get(`${this.controllerUrl}/deletebyid?id=`+id)
+    }
 }
