@@ -7,8 +7,8 @@ export default class JobSeekerService{
        return axios.get(`${this.controllerUrl}/getall`)
        
     }
-    jobSeekerAdd(){ 
-        return axios.post(`${this.controllerUrl}/add`)
-        
-     }
+    delete(id){ 
+      return axios.post(`${this.controllerUrl}/deleteById`+id)
+      
+   }
 }

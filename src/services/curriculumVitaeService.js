@@ -8,6 +8,6 @@ controllerUrl=`${process.env.REACT_APP_API_URL}/curriculumVitae`
     }
 
    findByJobSeekerId(id){
-       return axios.get(`${this.controllerUrl}/findByJobSeekerId?id=`,{params:{id}});
+       return axios.get(`${this.controllerUrl}/findByJobSeekerId?id=`+id);
    }
 }
