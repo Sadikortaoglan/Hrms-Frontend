@@ -7,7 +7,7 @@ export default class JobSeekerService{
        return axios.get(`${this.controllerUrl}/getall`)
        
     }
-    delete(id){ 
+    deleteById(id){ 
       return axios.post(`${this.controllerUrl}/deleteById`+id)
       
    }

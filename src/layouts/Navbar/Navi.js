@@ -37,3 +37,13 @@ export default function Navi() {
   </div>
     )
 }
+
+
+
+
+
+
+
+
+
+

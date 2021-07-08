@@ -6,4 +6,7 @@ registerForJobSeeker(jobSeeker){
     return axios.post(`${this.controllerUrl}/registerForJobSeeker`,jobSeeker);
     
  }
+ registerForEmployer(employer){
+     return axios.post(`${this.controllerUrl}/registerForEmployer`,employer);
+ }
 }
